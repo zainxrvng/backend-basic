@@ -41,14 +41,14 @@ app.patch('/items/:id', (req, res) => {
   res.json(item);
 });
 
-// 🗑️ DELETE
+//  DELETE
 app.delete('/items/:id', (req, res) => {
   const id = parseInt(req.params.id);
   const index = items.findIndex(i => i.id === id);
   if (index === -1) return res.status(404).json({ error: 'Item not found' });
   
   items.splice(index, 1);
-  res.status(204).send(); // No content
+  res.status(204).send(); 
 });
 
 app.listen(PORT, () => {
